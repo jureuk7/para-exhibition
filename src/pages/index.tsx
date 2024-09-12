@@ -1,54 +1,20 @@
-import LetterCard from '@/components/LetterCard'
-import s from './index.module.css'
-import LeftGraphic from '@/assets/leftgraphic.png'
-import Title from '@/assets/title.svg?react'
-import Right from '@/assets/right.svg?react'
-import { useQuery } from '@tanstack/react-query'
-import Text from '@/assets/text.svg?react'
-import { useNavigate } from 'react-router-dom'
-
-interface LetterType {
-    name: string;
-    message: string;
-    id: string;
-}
+import s from './index.module.css';
+import ParaChan from '@/assets/parachan.png';
+import Big from '@/assets/big.png';
+import ASDF from '@/assets/asdf.svg?react';
+import { useNavigate } from 'react-router-dom';
 
 export default function Index() {
-
     const navigate = useNavigate();
-
-    const { data } = useQuery<LetterType[]>({
-        queryKey: ['letters'],
-        queryFn: async (): Promise<LetterType[]> => {
-            const res = await fetch('https://tategb.apne2a.algorix.cloud/para/guestbook');
-            if (!res.ok) {
-            throw new Error('Network response was not ok');
-            }
-            const result = await res.json();
-            return result as LetterType[];  
-        }
-        });
-
-  return (
+return (
     <div className={s.layout}>
-        <div className={s.left}>
-        <img width={396} height={480} src={LeftGraphic} alt="left graphic" />
-            <button className={s.go} onClick={() => navigate('/write')}>
-                <Text />
-            </button>
-        </div>
-
-        <div className={s.wrapper}>
-            <div className={s.top}>
-                <Title />
-                <Right />
-                </div>
         <div className={s.container}>
-            {data?.map((item:LetterType, index) => (
-                <LetterCard key={index} name={item.name} content={item.message} index={index} />
-            ))}
+            <img width={550} src={Big} />
+            <button onClick={() => navigate('/letter')} className={s.button}>
+                <ASDF />
+            </button>
+                </div>
+        <img width={600} className={s.image} src={ParaChan} alt="parachan" />
         </div>
-        </div>
-    </div>
-  )
+)
 }
