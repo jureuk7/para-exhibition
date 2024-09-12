@@ -1,0 +1,118 @@
+.layout {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap:50px;
+}
+
+.form {
+    display: flex;
+    width: 396px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 30px;
+}
+
+.top {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    align-self: stretch;
+}
+
+.name {
+    outline: none;
+    text-align: center;
+    font-family: Sandoll Nemony2;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    display: flex;
+    padding: 23px 25px;
+    align-items: center;
+    text-align: left;
+    gap: 10px;
+    align-self: stretch;
+    border: 3px solid #FFF;
+    background: #7CC4E9;
+    box-shadow: 0px 4px 0px 0px #7EC8EC;
+    &::placeholder {
+        color: rgba(255, 255, 255, 0.60);
+    }
+    color: white;
+}
+
+.box {
+    display: flex;
+    height: 240px;
+    padding: 23px 25px;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    align-self: stretch;
+    border: 3px solid #FFF;
+    background: #7CC4E9;
+    box-shadow: 0px 4px 0px 0px #7EC8EC;
+}
+
+.content {
+    background: none;
+    border: none;
+    outline: none;
+    resize: none;
+    text-align: left;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    flex: 1;
+    width: 100%;
+    font-family: Sandoll Nemony2;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    &::placeholder {
+        color: rgba(255, 255, 255, 0.60);
+    }
+    color: white;
+}
+
+.count {
+    width: 100%;
+    color: #FFF;
+    text-align: right;
+    font-family: "Sandoll Nemony2";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.submit {
+    display: flex;
+    padding: 23px 25px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    align-self: stretch;
+    border: 5px solid #FFF;
+    background: #59B4E2;
+    box-shadow: 0px 4px 0px 0px #7EC8EC;
+    cursor: pointer;
+    transition: background 0.3s;
+    &:hover {
+        background: #7CC4E9;
+    }
+
+}
